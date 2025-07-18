@@ -1,0 +1,34 @@
+# Dependencies
+markdown: kramdown
+highlighter: rouge
+future: true
+
+plugins:
+    - jekyll-sitemap
+
+# File rules
+exclude: [vendor, Dangerfile, Gemfile, Gemfile.lock, LICENSE, README.md, CODE_OF_CONDUCT.md, CONTRIBUTING.md, new_draft.sh]
+
+# Permalinks
+permalink: /:title/
+
+# Site
+title: 'Augmented Coding Weekly'
+description: 'A look at the latest news about AI and developer tools, with a focus on how it is changing the software industry'
+baseurl: /augmented-coding-weekly
+logo: /img/logo.png
+
+curator:
+    name: 'Colin Eberhardt'
+    url: https://twitter.com/ColinEberhardt
+
+# Setup
+excerpt_separator: <!--excerpt-->
+
+# Data
+links:
+    rss: '/feed.xml'
+    twitter: 'https://twitter.com/WasmWeekly'
+    github: 'https://github.com/ColinEberhardt/ai-dev-tools-weekly'
+    issue: 'https://github.com/ColinEberhardt/ai-dev-tools-weekly/issues/new'
+    pull: 'https://github.com/ColinEberhardt/ai-dev-tools-weekly/compare'
