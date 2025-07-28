@@ -14,8 +14,8 @@
     <!-- Open Graph -->
     <meta property="og:title" content="{{ site.title }} - {{ page.title }}">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-    <meta property="og:image" content="{{ site.url }}{% if page.image %}{{ page.image }}{% else %}{{ site.logo }}{% endif %}">
+    <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+    <meta property="og:image" content="{{ site.logo | absolute_url }}">
     <meta property="og:description" content="{{ page.excerpt | normalize_whitespace | strip_html | truncatewords: 40 }}">
 
     <!-- Latest compiled and minified CSS -->
