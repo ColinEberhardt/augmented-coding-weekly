@@ -15,7 +15,7 @@ permalink: /:title/
 # Site
 title: 'Augmented Coding Weekly'
 description: 'A hype-free look at the latest news about AI-augmented software development and vibe coding, with a focus on how it is changing the software industry'
-baseurl: /augmented-coding-weekly
+baseurl: /
 logo: /img/logo.png
 
 curator:
@@ -28,7 +28,7 @@ excerpt_separator: <!--excerpt-->
 # Data
 links:
     rss: '/feed.xml'
-    twitter: 'https://twitter.com/WasmWeekly'
+    twitter: 'https://twitter.com/ColinEberhardt'
     github: 'https://github.com/ColinEberhardt/ai-dev-tools-weekly'
     issue: 'https://github.com/ColinEberhardt/ai-dev-tools-weekly/issues/new'
     pull: 'https://github.com/ColinEberhardt/ai-dev-tools-weekly/compare'
