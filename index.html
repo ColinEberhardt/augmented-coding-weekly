@@ -4,13 +4,34 @@ title: Home
 excerpt: A look at the latest news about AI and developer tools, with a focus on how it is changing the software industry
 ---
 
-<div>
-{% for post in site.posts %}
-<article class="post">
-    <h1 class="post-title text-center">
-        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-        <small class="post-date">{{ post.date | date_to_string }}</small>
-    </h1>
-</article>
-{% endfor %}
-</div> <!-- post-list -->
+<section class="featured-posts">
+    <h2 class="section-title">Latest Issues</h2>
+    
+    {% assign published_posts = site.posts | where_exp: "post", "post.published != false" %}
+    {% for post in published_posts %}
+    <div class="featured-post">
+        <div class="post-thumbnail">
+            {% if post.thumbnail %}
+                <a href="{{ site.baseurl }}{{ post.url }}">
+                    <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}" class="thumbnail-image">
+                </a>
+            {% else %}
+                <div class="placeholder-thumbnail"></div>
+            {% endif %}
+        </div>
+        <div class="post-content">
+            <h3 class="post-title">
+                <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+            </h3>
+            <p class="post-date">{{ post.date | date_to_string }}</p>
+            <div class="post-summary">
+                {% if post.summary %}
+                    <p>{{ post.summary }}</p>
+                {% endif %}
+            </div>
+            <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read Issue →</a>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+
