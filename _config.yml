@@ -15,7 +15,7 @@ permalink: /:title/
 # Site
 title: 'Augmented Coding Weekly'
 description: 'A hype-free look at the latest news about AI-augmented software development and vibe coding, with a focus on how it is changing the software industry'
-baseurl: /
+baseurl: 
 logo: /img/logo.png
 
 curator:
