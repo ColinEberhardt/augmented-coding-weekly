@@ -90,7 +90,7 @@ For each recommended article (aim for 10 recommendations), provide:
 - Category: [e.g., "Agentic Coding", "Model Release", "Critical Analysis", "Developer Experience"]
 - summary: a brief bullet point summary of the article itself (visit the article to produce this)
 - HN Stats: [points and comment count if available]
-- HN Sentiment: View the HN comments page and summarise the sentiment towards this post.
+- HN Sentiment: View the HN comments page and summarise the sentiment towards this post. This page can be reached by clicking on the "n comments" URL on the respective hacker news page.
 
 Sort recommendations by relevance score (highest first).
 
