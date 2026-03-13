@@ -50,11 +50,27 @@ For each page, use the WebFetch tool to retrieve the content. Hacker News URLs f
 - Page 3: `https://news.ycombinator.com/news?p=3`
 - Page 4: `https://news.ycombinator.com/news?p=4`
 
-Extract article titles, URLs, and any available metadata (points, comments, domains).
+**IMPORTANT**: When using WebFetch on each HN page, use a prompt like:
 
-## Step 3: Match and Rank Articles
+```
+Extract all article information from this Hacker News page. For each article, provide:
+- Title
+- Article URL (the actual article link)
+- Domain
+- Points
+- Comment count
+- HN discussion URL (the "n comments" link, format: https://news.ycombinator.com/item?id=XXXXXXX)
 
-For each article, evaluate its fit based on:
+Format the results clearly so I can easily extract the HN discussion URLs later.
+```
+
+You will need these HN discussion URLs in Step 4 to visit the actual discussions.
+
+## Step 3: Preliminary Ranking
+
+Do a first-pass evaluation of all ~120 articles to identify the top 10-15 candidates.
+
+Evaluate based on:
 
 ### Relevance Score (0-10)
 - **10**: Perfect match - directly about AI coding tools, agentic development, or AI's impact on software engineering
@@ -75,22 +91,50 @@ For each article, evaluate its fit based on:
 - Shallow coverage of complex topics
 - Clickbait titles
 
-## Step 4: Save Recommendations
+Identify the top 10-15 candidates (relevance score 7+) to investigate further.
 
-Save your findings into the `research` folder, in a markdown file with todays date.
+## Step 4: Deep Dive on Top Candidates
 
-### Recommended Articles
+**THIS STEP IS MANDATORY** - Do not skip to Step 5 without completing this.
 
-For each recommended article (aim for 10 recommendations), provide:
+For each of your top 10-15 candidates, you must:
+
+1. **Visit the actual article** using WebFetch
+   - Read the full content
+   - Create a bullet-point summary of the key points
+   - Extract important quotes if applicable
+   - Assess the actual quality vs. the title's promise
+
+2. **Visit the HN discussion page** using the HN discussion URL you extracted in Step 2
+   - Read through the comments
+   - Assess the overall sentiment (excited, skeptical, critical, mixed, etc.)
+   - Identify main points of debate or discussion
+   - Note any red flags the community raised
+   - Extract representative quotes from highly-upvoted comments if relevant
+
+This deep dive will:
+- Confirm whether high-scoring articles actually deliver on their premise
+- Reveal community concerns or criticisms you should be aware of
+- Provide richer context for your recommendations
+- Sometimes reveal that a promising title leads to disappointing content
+
+## Step 5: Finalize and Save Recommendations
+
+After completing the deep dive in Step 4, save your findings into the `research` folder in a markdown file with today's date.
+
+Select your final ~10 recommendations from the candidates you investigated.
+
+For each recommended article, provide:
 
 **[Article Title]**
-- URL: [full URL]
-- Domain: [source domain]
-- Relevance Score: [0-10]
-- Category: [e.g., "Agentic Coding", "Model Release", "Critical Analysis", "Developer Experience"]
-- summary: a brief bullet point summary of the article itself (visit the article to produce this)
-- HN Stats: [points and comment count if available]
-- HN Sentiment: View the HN comments page and summarise the sentiment towards this post. This page can be reached by clicking on the "n comments" URL on the respective hacker news page.
+- **URL**: [full URL of the article]
+- **Domain**: [source domain]
+- **Relevance Score**: [0-10]
+- **Category**: [e.g., "Agentic Coding", "Model Release", "Critical Analysis", "Developer Experience"]
+- **Summary**: [bullet-point summary from visiting the actual article]
+- **HN Stats**: [points and comment count]
+- **HN Sentiment**: [Summary from visiting the HN discussion page - describe the overall sentiment and key discussion themes]
+- **Why Recommended**: [Brief explanation of why this fits the newsletter]
 
 Sort recommendations by relevance score (highest first).
 
@@ -98,8 +142,30 @@ Sort recommendations by relevance score (highest first).
 
 ## Execution Notes
 
-- Use TodoWrite to track your progress through the steps
+### Task Tracking
+- Use TodoWrite to track your progress through ALL 5 steps
+- Create separate todos for:
+  1. Analyzing recent posts
+  2. Fetching HN pages
+  3. Preliminary ranking
+  4. **Deep dive (visiting articles AND HN discussions)**
+  5. Saving recommendations
+- Mark each step complete only when fully finished
+
+### Efficiency Tips
 - Read all 5 recent posts in parallel for efficiency
 - Fetch all 4 HN pages in parallel
+- For Step 4 deep dive: fetch articles and HN discussions in parallel (use multiple WebFetch calls in one message)
+
+### Quality Standards
 - Be critical in your evaluation - quality over quantity
 - Consider the editorial voice: the newsletter values balanced perspectives and critical thinking over pure hype
+- **Never write "Need to check HN discussion"** - actually check it in Step 4
+- If an HN discussion reveals the article is misleading/hyped/problematic, remove it from recommendations
+
+### Common Pitfalls to Avoid
+- ❌ Skipping the HN discussion sentiment analysis
+- ❌ Not actually visiting the articles to verify quality
+- ❌ Guessing at HN discussion URLs instead of extracting them from the HN pages
+- ❌ Writing recommendations before completing the deep dive
+- ❌ Including articles where HN comments reveal serious issues
