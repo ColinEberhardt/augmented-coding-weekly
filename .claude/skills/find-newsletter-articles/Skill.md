@@ -36,7 +36,7 @@ Focus on identifying:
 
 Create a concise summary (2-3 paragraphs) describing the typical newsletter post.
 
-Save this into a files titled `summary.txt` within the `research` folder. Replacing if it already exists.
+Save this into a files titled `summary.txt` within the `research` folder in the root of this project. Replacing if it already exists.
 
 ## Step 2: Fetch and Analyze Hacker News
 
