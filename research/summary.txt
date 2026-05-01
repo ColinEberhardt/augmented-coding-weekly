@@ -1,7 +1,7 @@
 AI Dev Tools Weekly - Content Pattern Analysis
 ================================================
 
-Based on analysis of Issues #36-40 (Mar-Apr 2026, updated Apr 24 2026)
+Based on analysis of Issues #38-42 (Apr 2026, updated May 1 2026)
 
 CONTENT THEMES
 --------------
@@ -11,13 +11,13 @@ Primary Topics:
 - AI's transformative impact on software engineering practices
 - Real-world implementations and case studies of AI-assisted development
 - Model releases and capability benchmarks (SWE-bench, Terminal-Bench etc.)
+- Hidden/undisclosed behavior changes from AI providers (cost, quality, caching)
 
 Secondary Topics:
 - Open source sustainability and ethical concerns in the AI era
-- Legal implications (copyright, licensing, AI-generated code)
+- Legal implications (copyright, licensing, AI-generated code, source leaks)
 - Developer identity, psychology, and cultural shifts
 - Team dynamics and changing hiring patterns
-- Specification-driven development (SDD) and literate programming
 - Code quality vs velocity tradeoffs
 - Critical analysis of AI tools and methodologies
 - Security and transparency concerns with AI tool providers
@@ -46,6 +46,7 @@ Tone and Perspective:
 - Personal and opinionated editorial commentary after each article
 - Values thoughtful analysis over cheerleading
 - Reflective on broader industry and cultural implications
+- Editor has strong interest in Anthropic/Claude ecosystem specifically
 
 Article Length:
 - Substantive pieces with depth (not just news snippets)
@@ -74,6 +75,7 @@ TOPIC CATEGORIES THAT APPEAR FREQUENTLY
 11. Critical Tool Analysis & Controversies
 12. AI usage data / dashboards / surveys
 13. Security implications of AI tools
+14. Transparency failures from AI providers (billing, quality, behavior changes)
 
 EDITORIAL VOICE
 ---------------
@@ -85,6 +87,7 @@ The newsletter curator (Colin Eberhardt, Scott Logic) adds personal commentary a
 - Balances optimism with realistic concerns
 - Encourages reader reflection rather than prescribing answers
 - Values diverse approaches and perspectives
+- Has strong personal interest in Claude Code as daily driver
 
 ARTICLES TO AVOID
 -----------------
